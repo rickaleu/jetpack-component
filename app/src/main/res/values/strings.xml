@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Navigation Component App</string>
+
+    <!-- Start Fragment -->
+    <string name="start_fragment_toolbar_title">Start</string>
+    <string name="start_fragment_button_title">Next</string>
+
+    <!-- Profile Fragment -->
+    <string name="profile_fragment_toolbar_title">Profile</string>
+    <string name="profile_fragment_text_title">Profile Fragment</string>
+    <string name="profile_fragment_text">Bem vindo %1$s</string>
+
+    <!-- Login Fragment -->
+    <string name="login_fragment_toolbar_title">Login</string>
+    <string name="login_fragment_text_title">Login Fragment</string>
+    <string name="login_message_error_username">Usuário Inválido</string>
+    <string name="login_message_error_password">Senha Inválida</string>
+
+    <!-- Register Fragment -->
+    <string name="register_fragment_toolbar_title">Register</string>
+    <string name="register_fragment_text_title">Register Fragment</string>
+    <string name="register_message_error_name">Nome Inválido</string>
+    <string name="register_message_error_bio">Bio Inválida</string>
+
+    <!-- Credentials Fragment -->
+    <string name="credentials_fragment_toolbar_title">Choose Credentials</string>
+    <string name="credentials_message_error_username">Usuário Inválido</string>
+    <string name="credentials_message_error_password">Senha Inválida</string>
+    <string name="credentials_text_message">Seja bem vindo %1$s</string>
+
+
 </resources>
