@@ -1,5 +1,6 @@
 package br.com.ricardo.navigationcomponentapp.presentation.login.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import br.com.ricardo.navigationcomponentapp.R
@@ -12,21 +13,33 @@ class LoginViewModel : ViewModel() {
         class InvalidAuthentication(val fields: List<Pair<String, Int>>) : AuthenticationState()
     }
 
-    val authenicationStateEvent = MutableLiveData<AuthenticationState>()
     var user = ""
+    var token = ""
+
+    private val _authenicationStateEvent = MutableLiveData<AuthenticationState>()
+    val authenicationStateEvent: LiveData<AuthenticationState>
+    get() = _authenicationStateEvent
 
     init {
         refuseAuthentication()
     }
 
     fun refuseAuthentication() {
-        authenicationStateEvent.value = AuthenticationState.Unauthenticated
+        _authenicationStateEvent.value = AuthenticationState.Unauthenticated
+    }
+
+    fun  authenticationToken(token: String, user: String) {
+        this.user = user
+        this.token = token
+
+        _authenicationStateEvent.value = AuthenticationState.Authenticated
     }
 
     fun authentication(user: String, password: String) {
         if (isValidForm(user, password)) {
             this.user = user
-            authenicationStateEvent.value = AuthenticationState.Authenticated
+
+            _authenicationStateEvent.value = AuthenticationState.Authenticated
         }
     }
 
@@ -42,7 +55,7 @@ class LoginViewModel : ViewModel() {
         }
 
         if (invalidFields.isNotEmpty()) {
-            authenicationStateEvent.value = AuthenticationState.InvalidAuthentication(invalidFields)
+            _authenicationStateEvent.value = AuthenticationState.InvalidAuthentication(invalidFields)
             return false
         }
 

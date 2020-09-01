@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/login_imput_name"
+            android:id="@+id/register_imput_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -22,7 +22,7 @@
             android:textColorHint="@color/black">
 
             <EditText
-                android:id="@+id/login_edit_name"
+                android:id="@+id/register_edit_name"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="nome" />
@@ -30,7 +30,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/login_imput_bio"
+            android:id="@+id/register_imput_bio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -41,7 +41,7 @@
             android:textColorHint="@color/black">
 
             <EditText
-                android:id="@+id/login_edit_bio"
+                android:id="@+id/register_edit_bio"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="bio" />

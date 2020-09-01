@@ -55,7 +55,7 @@ class LoginFragment : Fragment() {
         }
 
         login_button_sing_up.setOnClickListener {
-            findNavController().navigateWithAnimations(R.id.registerFragment)
+            findNavController().navigateWithAnimations(R.id.registration_graph)
         }
 
         login_edit_user.addTextChangedListener { login_imput_user.hideMessageError() }
@@ -69,7 +69,6 @@ class LoginFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         cancelAuthentication()
         return super.onOptionsItemSelected(item)
-
     }
 
     private fun cancelAuthentication() {

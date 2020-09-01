@@ -28,11 +28,31 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_profileDataFragment"
-            app:destination="@id/registerFragment" />
+            app:destination="@id/registration_graph" />
     </fragment>
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="br.com.ricardo.navigationcomponentapp.presentation.registration.ui.RegisterFragment"
-        android:label="@string/register_fragment_toolbar_title"
-        tools:layout="@layout/fragment_register" />
+
+    <navigation android:id="@+id/registration_graph"
+        app:startDestination="@id/registerFragment">
+        <fragment
+            android:id="@+id/registerFragment"
+            android:name="br.com.ricardo.navigationcomponentapp.presentation.registration.ui.RegisterFragment"
+            android:label="@string/register_fragment_toolbar_title"
+            tools:layout="@layout/fragment_register" >
+            <action
+                android:id="@+id/action_registerFragment_to_credentialsFragment"
+                app:destination="@id/credentialsFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/credentialsFragment"
+            android:name="br.com.ricardo.navigationcomponentapp.presentation.credentials.ui.CredentialsFragment"
+            android:label="@string/credentials_fragment_toolbar_title"
+            tools:layout="@layout/fragment_credentials" >
+
+            <argument android:name="name"
+                app:argType="string"
+                app:nullable="false"/>
+
+        </fragment>
+    </navigation>
 </navigation>
